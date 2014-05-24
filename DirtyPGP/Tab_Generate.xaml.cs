@@ -39,29 +39,29 @@ namespace DirtyPGP
 			long e = ed_var_e.Value.Value;
 			long d = ed_var_d.Value.Value;
 
-			ell_test_p.Fill = RASHelper.IsPrime(p) ? b_true : b_false;
-			ell_test_q.Fill = RASHelper.IsPrime(q) ? b_true : b_false;
+			ell_test_p.Fill = RSAHelper.IsPrime(p) ? b_true : b_false;
+			ell_test_q.Fill = RSAHelper.IsPrime(q) ? b_true : b_false;
 
 			ell_test_n.Fill = (n == p * q) ? b_true : b_false;
 			ell_test_m.Fill = (m == (p - 1) * (q - 1)) ? b_true : b_false;
 
-			ell_test_e.Fill = RASHelper.GGT(e, m) == 1 ? b_true : b_false;
+			ell_test_e.Fill = RSAHelper.GGT(e, m) == 1 ? b_true : b_false;
 
 			ell_test_d.Fill = (m != 0 && (e * d) % m == 1) ? b_true : b_false;
 
-			bool correct = RASHelper.IsPrime(p) && RASHelper.IsPrime(q) && (n == p * q) && (m == (p - 1) * (q - 1)) && (RASHelper.GGT(e, m) == 1) && (m != 0 && (e * d) % m == 1);
+			bool correct = RSAHelper.IsPrime(p) && RSAHelper.IsPrime(q) && (n == p * q) && (m == (p - 1) * (q - 1)) && (RSAHelper.GGT(e, m) == 1) && (m != 0 && (e * d) % m == 1);
 
 			lblPublicKey.Content = correct ? string.Format("PUBLIC KEY = (e|N) = ({0}|{1})", e, n) : "ERROR";
 			lblPrivateKey.Content = correct ? string.Format("PRIVATE KEY = (d|N) = ({0}|{1})", d, n) : "ERROR";
 		}
 		private void btn_gen_p_Click(object sender, System.Windows.RoutedEventArgs eargs)
 		{
-			ed_var_p.Value = RASHelper.GetPrime();
+			ed_var_p.Value = RSAHelper.GetPrime();
 		}
 
 		private void btn_gen_q_Click(object sender, System.Windows.RoutedEventArgs eargs)
 		{
-			ed_var_q.Value = RASHelper.GetPrime();
+			ed_var_q.Value = RSAHelper.GetPrime();
 		}
 
 		private void btn_gen_n_Click(object sender, System.Windows.RoutedEventArgs eargs)
@@ -84,7 +84,7 @@ namespace DirtyPGP
 		{
 			long m = ed_var_m.Value.Value;
 
-			ed_var_e.Value = RASHelper.GetRandomCoprime(m);
+			ed_var_e.Value = RSAHelper.GetRandomCoprime(m);
 		}
 
 		private void btn_gen_d_Click(object sender, System.Windows.RoutedEventArgs eargs)
@@ -92,7 +92,7 @@ namespace DirtyPGP
 			long m = ed_var_m.Value.Value;
 			long e = ed_var_e.Value.Value;
 
-			ed_var_d.Value = RASHelper.GetMultInv(e, m);
+			ed_var_d.Value = RSAHelper.GetMultInv(e, m);
 		}
 	}
 }

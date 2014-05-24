@@ -8,11 +8,11 @@
             <TabItem Header="Generate">
                 <local:Tab_Generate />
             </TabItem>
-            <TabItem Header="Encrypt">
-                <local:Tab_Generate />
+            <TabItem Header="RSA Encrypt">
+                <local:Tab_RSA_Encrypt />
             </TabItem>
-            <TabItem Header="Decrypt">
-                <local:Tab_Decrypt />
+            <TabItem Header="RSA Decrypt">
+                <local:Tab_RSA_Decrypt />
             </TabItem>
         </TabControl>
     </Grid>
