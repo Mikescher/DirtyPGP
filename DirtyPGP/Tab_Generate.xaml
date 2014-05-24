@@ -3,35 +3,97 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              mc:Ignorable="d" 
              d:DesignHeight="325" d:DesignWidth="525">
+
     <Grid Background="Beige">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
+            
+            <ColumnDefinition Width="150px"/>
+            <ColumnDefinition Width="5px"/>
+
+            <ColumnDefinition Width="25px"/>
+            <ColumnDefinition Width="5px"/>
+
+            <ColumnDefinition Width="75px"/>
+            <ColumnDefinition Width="5px"/>
+
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="45px"/>
+            
+            <RowDefinition Height="10px"/>
+            
             <RowDefinition Height="25px"/>
+            <RowDefinition Height="5px"/>
+
             <RowDefinition Height="25px"/>
+            <RowDefinition Height="5px"/>
+
             <RowDefinition Height="25px"/>
+            <RowDefinition Height="5px"/>
+
             <RowDefinition Height="25px"/>
+            <RowDefinition Height="5px"/>
+
             <RowDefinition Height="25px"/>
+            <RowDefinition Height="5px"/>
+
             <RowDefinition Height="25px"/>
-            <RowDefinition Height="25px"/>
-            <RowDefinition Height="25px"/>
-            <RowDefinition Height="25px"/>
+
+
+            <RowDefinition Height="10px"/>
+
+            <RowDefinition Height="35px"/>
+            <RowDefinition Height="5px"/>
+
+            <RowDefinition Height="35px"/>
+            
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Generate" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="35" />
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="65536" Text="Generate Keypair" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="35" />
 
-        <Label Grid.Row="2" Grid.Column="0" Content="p = " />
-        <Label Grid.Row="3" Grid.Column="0" Content="q = " />
-        <Label Grid.Row="4" Grid.Column="0" Content="N = " />
-        <Label Grid.Row="5" Grid.Column="0" Content="m = " />
-        <Label Grid.Row="6" Grid.Column="0" Content="e = " />
-        <Label Grid.Row="7" Grid.Column="0" Content="d = " />
+        <Label Grid.Row="02" Grid.Column="0" Content="p =" />
+        <Label Grid.Row="04" Grid.Column="0" Content="q =" />
+        <Label Grid.Row="06" Grid.Column="0" Content="N =" />
+        <Label Grid.Row="08" Grid.Column="0" Content="m =" />
+        <Label Grid.Row="10" Grid.Column="0" Content="e =" />
+        <Label Grid.Row="12" Grid.Column="0" Content="d =" />
+
+        <xctk:LongUpDown Grid.Row="02" Grid.Column="1" Value="0" x:Name="ed_var_p" ValueChanged="ed_ValueChanged"/>
+        <xctk:LongUpDown Grid.Row="04" Grid.Column="1" Value="0" x:Name="ed_var_q" ValueChanged="ed_ValueChanged"/>
+        <xctk:LongUpDown Grid.Row="06" Grid.Column="1" Value="0" x:Name="ed_var_n" ValueChanged="ed_ValueChanged"/>
+        <xctk:LongUpDown Grid.Row="08" Grid.Column="1" Value="0" x:Name="ed_var_m" ValueChanged="ed_ValueChanged"/>
+        <xctk:LongUpDown Grid.Row="10" Grid.Column="1" Value="0" x:Name="ed_var_e" ValueChanged="ed_ValueChanged"/>
+        <xctk:LongUpDown Grid.Row="12" Grid.Column="1" Value="0" x:Name="ed_var_d" ValueChanged="ed_ValueChanged"/>
+
+        <Ellipse Grid.Row="02" Grid.Column="3" Fill="#FFFF00" Stroke="#000000" x:Name="ell_test_p"/>
+        <Ellipse Grid.Row="04" Grid.Column="3" Fill="#FFFF00" Stroke="#000000" x:Name="ell_test_q"/>
+        <Ellipse Grid.Row="06" Grid.Column="3" Fill="#FFFF00" Stroke="#000000" x:Name="ell_test_n"/>
+        <Ellipse Grid.Row="08" Grid.Column="3" Fill="#FFFF00" Stroke="#000000" x:Name="ell_test_m"/>
+        <Ellipse Grid.Row="10" Grid.Column="3" Fill="#FFFF00" Stroke="#000000" x:Name="ell_test_e"/>
+        <Ellipse Grid.Row="12" Grid.Column="3" Fill="#FFFF00" Stroke="#000000" x:Name="ell_test_d"/>
+
+        <Button Grid.Row="02" Grid.Column="5" Content="Generate" x:Name="btn_gen_p" Click="btn_gen_p_Click"/>
+        <Button Grid.Row="04" Grid.Column="5" Content="Generate" x:Name="btn_gen_q" Click="btn_gen_q_Click"/>
+        <Button Grid.Row="06" Grid.Column="5" Content="Generate" x:Name="btn_gen_n" Click="btn_gen_n_Click"/>
+        <Button Grid.Row="08" Grid.Column="5" Content="Generate" x:Name="btn_gen_m" Click="btn_gen_m_Click"/>
+        <Button Grid.Row="10" Grid.Column="5" Content="Generate" x:Name="btn_gen_e" Click="btn_gen_e_Click"/>
+        <Button Grid.Row="12" Grid.Column="5" Content="Generate" x:Name="btn_gen_d" Click="btn_gen_d_Click"/>
+
+        <Label Grid.Row="02" Grid.Column="7" Content="Fairly big prime" />
+        <Label Grid.Row="04" Grid.Column="7" Content="Fairly big prime" />
+        <Label Grid.Row="06" Grid.Column="7" Content=" = p * q" />
+        <Label Grid.Row="08" Grid.Column="7" Content=" = (p - 1) * (q - 1)" />
+        <Label Grid.Row="10" Grid.Column="7" Content="Random,   GGT(e, m) == 1,  coprime" />
+        <Label Grid.Row="12" Grid.Column="7" Content="(e * d) % m == 1" />
+
+        <Label Grid.Row="14" Grid.Column="1" Grid.ColumnSpan="7" Content="PUBLIC KEY = (e|N) = (|)" x:Name="lblPublicKey" FontWeight="Bold" FontSize="14" VerticalAlignment="Center"/>
+        <Label Grid.Row="16" Grid.Column="1" Grid.ColumnSpan="7" Content="PRIVATE KEY = (d|N) = (|)" x:Name="lblPrivateKey" FontWeight="Bold" FontSize="14" VerticalAlignment="Center"/>
         
     </Grid>
 </UserControl>
