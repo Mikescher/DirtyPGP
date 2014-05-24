@@ -17,6 +17,12 @@ namespace DirtyPGP
 			intialized = true;
 		}
 
+		public void setKey(long e, long d, long n)
+		{
+			ed_Key_e.Value = e;
+			ed_Key_n.Value = n;
+		}
+
 		private void ed_encode_before_ValueChanged(object sender, System.Windows.RoutedPropertyChangedEventArgs<object> eargs)
 		{
 			if (!intialized)

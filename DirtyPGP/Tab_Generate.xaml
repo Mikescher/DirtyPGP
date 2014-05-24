@@ -94,6 +94,7 @@
 
         <Label Grid.Row="14" Grid.Column="1" Grid.ColumnSpan="7" Content="PUBLIC KEY = (e|N) = (|)" x:Name="lblPublicKey" FontWeight="Bold" FontSize="14" VerticalAlignment="Center"/>
         <Label Grid.Row="16" Grid.Column="1" Grid.ColumnSpan="7" Content="PRIVATE KEY = (d|N) = (|)" x:Name="lblPrivateKey" FontWeight="Bold" FontSize="14" VerticalAlignment="Center"/>
-        
+
+        <Button Grid.Row="16" Grid.Column="7" Content="Provide Key" FontWeight="Bold" Click="Button_Click" />
     </Grid>
 </UserControl>

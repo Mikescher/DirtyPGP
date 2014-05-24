@@ -72,6 +72,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Tab_PGP_Decrypt.xaml.cs">
+      <DependentUpon>Tab_PGP_Decrypt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tab_PGP_Encrypt.xaml.cs">
+      <DependentUpon>Tab_PGP_Encrypt.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RSAHelper.cs" />
     <Compile Include="Tab_RSA_Decrypt.xaml.cs">
       <DependentUpon>Tab_RSA_Decrypt.xaml</DependentUpon>
@@ -82,6 +88,14 @@
     <Compile Include="Tab_Generate.xaml.cs">
       <DependentUpon>Tab_Generate.xaml</DependentUpon>
     </Compile>
+    <Page Include="Tab_PGP_Decrypt.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tab_PGP_Encrypt.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

@@ -1,17 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace DirtyPGP
 {
@@ -23,6 +10,16 @@ namespace DirtyPGP
 		public MainWindow()
 		{
 			InitializeComponent();
+
+			tab_Generate.ProvideKey += tab_Generate_ProvideKey;
+		}
+
+		void tab_Generate_ProvideKey(long e, long d, long n)
+		{
+			tab_PGP_Decrypt.setKey(e, d, n);
+			tab_PGP_Encrypt.setKey(e, d, n);
+			tab_RSA_Decrypt.setKey(e, d, n);
+			tab_RSA_Encrypt.setKey(e, d, n);
 		}
 	}
 }

@@ -10,6 +10,9 @@ namespace DirtyPGP
 	{
 		private bool intialized = false;
 
+		public event ProvideKeyHandler ProvideKey;
+		public delegate void ProvideKeyHandler(long e, long d, long n);
+
 		public Tab_Generate()
 		{
 			InitializeComponent();
@@ -93,6 +96,18 @@ namespace DirtyPGP
 			long e = ed_var_e.Value.Value;
 
 			ed_var_d.Value = RSAHelper.GetMultInv(e, m);
+		}
+
+		private void Button_Click(object sender, System.Windows.RoutedEventArgs eargs)
+		{
+			long n = ed_var_n.Value.Value;
+			long e = ed_var_e.Value.Value;
+			long d = ed_var_d.Value.Value;
+
+			if (ProvideKey != null)
+			{
+				ProvideKey(e, d, n);
+			}
 		}
 	}
 }

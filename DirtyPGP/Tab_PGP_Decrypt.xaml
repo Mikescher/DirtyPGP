@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="DirtyPGP.Tab_PGP_Decrypt"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d" 
+             d:DesignHeight="325" d:DesignWidth="525">
+    <Grid Background="Beige">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="5px"/>
+            <ColumnDefinition Width="2*"/>
+            
+            <ColumnDefinition Width="5px"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="5px"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45px"/>
+
+            <RowDefinition Height="10px"/>
+
+            <RowDefinition Height="25px"/>
+            <RowDefinition Height="5px"/>
+
+            <RowDefinition Height="25px"/>
+            <RowDefinition Height="5px"/>
+
+            <RowDefinition Height="25px"/>
+            <RowDefinition Height="5px"/>
+
+            <RowDefinition Height="25px"/>
+            <RowDefinition Height="5px"/>
+
+            <RowDefinition Height="25px"/>
+            <RowDefinition Height="5px"/>
+
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="65536" Text="Decrypt PGP" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="35" />
+
+        <Label Grid.Row="2" Grid.Column="0" Content="Private Key (d|N):" FontWeight="Bold" />
+        <xctk:LongUpDown Grid.Row="2" Grid.Column="1" Value="0" x:Name="ed_Key_d"/>
+        <xctk:LongUpDown Grid.Row="2" Grid.Column="3" Value="0" x:Name="ed_Key_n"/>
+
+        <TextBox Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" x:Name="edCryptNumbers"/>
+        <Button  Grid.Row="4" Grid.Column="5" Content="Decrypt" Click="Button_Click" />
+
+        <TextBox Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3" x:Name="edPlainNumbers"/>
+        <TextBox Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="3" x:Name="edNumberized"/>
+        <TextBox Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="3" x:Name="edPlainText"/>
+
+    </Grid>
+</UserControl> 

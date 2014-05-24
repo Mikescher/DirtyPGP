@@ -115,5 +115,19 @@ namespace DirtyPGP
 
 			return (long)val;
 		}
+
+		public static bool isInt(string s)
+		{
+			try
+			{
+				Convert.ToInt64(s);
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+
+			return true;
+		}
 	}
 }
