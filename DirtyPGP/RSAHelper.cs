@@ -3,7 +3,7 @@ using System.Numerics;
 
 namespace DirtyPGP
 {
-	public static class RASHelper
+	public static class RSAHelper
 	{
 		private static Random random = new Random();
 
@@ -84,6 +84,36 @@ namespace DirtyPGP
 			}
 
 			return v;
+		}
+
+		// (a^e) mod m
+		public static long BinaryModuloPow(long a, long e, long m, ref string dbgout, ref string dbgout2)
+		{
+			dbgout = "" + a;
+			dbgout2 = "";
+
+			BigInteger val = new BigInteger(a);
+
+			string binary = Convert.ToString(e, 2);
+
+			for (int i = 1; i < binary.Length; i++)
+			{
+				val = BigInteger.Pow(val, 2);
+
+				val %= m;
+				dbgout = "(" + dbgout + ")^2 % " + m;
+				dbgout2 += "Q";
+				if (binary[i] == '1')
+				{
+					val *= a;
+					val %= m;
+					dbgout = "(" + dbgout + ") * " + a + " % " + m;
+					dbgout2 += "M";
+				}
+				dbgout2 += " ";
+			}
+
+			return (long)val;
 		}
 	}
 }

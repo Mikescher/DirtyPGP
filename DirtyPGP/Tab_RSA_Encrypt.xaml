@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="DirtyPGP.Tab_RSA_Encrypt"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d" 
+             d:DesignHeight="325" d:DesignWidth="525">
+    <Grid Background="Beige">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+
+            <ColumnDefinition Width="5px"/>
+
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="auto"/>
+
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="25px"/>
+
+            <ColumnDefinition Width="5px"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45px"/>
+
+            <RowDefinition Height="10px"/>
+
+            <RowDefinition Height="25px"/>
+            <RowDefinition Height="20px"/>
+
+            <RowDefinition Height="25px"/>
+            <RowDefinition Height="25px"/>
+
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="25px"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="65536" Text="Encrypt message" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="35" />
+
+        <Label Grid.Row="2" Grid.Column="0" Content="Public Key (e|N):" FontWeight="Bold" />
+        <xctk:LongUpDown Grid.Row="2" Grid.Column="2" Value="0" x:Name="ed_Key_e"/>
+        <xctk:LongUpDown Grid.Row="2" Grid.Column="4" Value="0" x:Name="ed_Key_n"/>
+
+        <Label Grid.Row="4" Grid.Column="0" Content="Encode:" FontWeight="Bold" />
+        <xctk:LongUpDown Grid.Row="4" Grid.Column="2" Value="0" x:Name="ed_encode_before" ValueChanged="ed_encode_before_ValueChanged"/>
+        <Label Grid.Row="4" Grid.Column="3" Content="->" FontWeight="Bold" />
+        <xctk:LongUpDown Grid.Row="4" Grid.Column="4" Value="0" x:Name="ed_encode_after"/>
+        <Ellipse Grid.Row="4" Grid.Column="5" Fill="#FFFF00" Stroke="#000000" x:Name="ell_test_encode"/>
+        
+        <ScrollViewer Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="3" HorizontalScrollBarVisibility="Visible">
+            <TextBox AcceptsReturn="True" x:Name="memoInfo"/>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
