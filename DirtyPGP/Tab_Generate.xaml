@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="DirtyPGP.Tab_Generate"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="325" d:DesignWidth="525">
+    <Grid Background="Beige">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45px"/>
+            <RowDefinition Height="25px"/>
+            <RowDefinition Height="25px"/>
+            <RowDefinition Height="25px"/>
+            <RowDefinition Height="25px"/>
+            <RowDefinition Height="25px"/>
+            <RowDefinition Height="25px"/>
+            <RowDefinition Height="25px"/>
+            <RowDefinition Height="25px"/>
+            <RowDefinition Height="25px"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Generate" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="35" />
+
+        <Label Grid.Row="2" Grid.Column="0" Content="p = " />
+        <Label Grid.Row="3" Grid.Column="0" Content="q = " />
+        <Label Grid.Row="4" Grid.Column="0" Content="N = " />
+        <Label Grid.Row="5" Grid.Column="0" Content="m = " />
+        <Label Grid.Row="6" Grid.Column="0" Content="e = " />
+        <Label Grid.Row="7" Grid.Column="0" Content="d = " />
+        
+    </Grid>
+</UserControl>

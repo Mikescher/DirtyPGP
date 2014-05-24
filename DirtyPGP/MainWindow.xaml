@@ -1,0 +1,19 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:DirtyPGP" x:Class="DirtyPGP.MainWindow"
+        Title="DirtyPGP by mikescher.de" Height="350" Width="525">
+    <Grid>
+        <TabControl TabStripPlacement="Bottom">
+            <TabItem Header="Generate">
+                <local:Tab_Generate />
+            </TabItem>
+            <TabItem Header="Encrypt">
+                <local:Tab_Generate />
+            </TabItem>
+            <TabItem Header="Decrypt">
+                <local:Tab_Decrypt />
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
